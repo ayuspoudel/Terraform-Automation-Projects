@@ -1,14 +1,4 @@
-variable "ami_id_value" {
-  description = "value for the AMI"
-  default = ""
-}
 
-variable "instance_type_value" {
-    description = "value for instance type"
-}
-variable "subnet_id_value" {
-  description = "value for subnet id"
-}
 
 provider "aws" {
   region = "us-east-1"
