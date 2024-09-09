@@ -4,7 +4,7 @@ This project is designed to automate the creation and management of AWS EC2 inst
 
 ## Project Structure
 
-```
+``` 
 AWS-ec2-Instance-Automation/
 ├── modules/
 │   └── ec2_instance/
