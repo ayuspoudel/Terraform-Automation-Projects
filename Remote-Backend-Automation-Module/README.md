@@ -5,7 +5,7 @@
 
 This repository contains Terraform configurations for automating the setup of AWS resources with remote state management using an S3 bucket. It includes modules for launching EC2 instances and creating S3 buckets, with state managed remotely.
 
-##Screenshot
+## Screenshot
 <img width="1190" alt="Screenshot 2024-09-09 at 17 11 27" src="https://github.com/user-attachments/assets/6a664906-e84f-4970-93b9-f972011cef24">
 
 
