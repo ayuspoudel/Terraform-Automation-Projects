@@ -1,0 +1,17 @@
+```gitignore
+# Local Terraform state files
+terraform.tfstate
+terraform.tfstate.*
+
+# Local Terraform directories
+.terraform/
+
+# Crash log files
+crash.log
+
+# Sensitive data files
+*.tfvars
+*.tfstate.d/
+
+# .terraform directories for modules
+modules/**/.terraform/
