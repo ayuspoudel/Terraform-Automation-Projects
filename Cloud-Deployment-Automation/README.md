@@ -24,6 +24,8 @@ The Terraform configuration deploys the following AWS infrastructure components:
 - **Security Group**: Configured to allow inbound HTTP (port 80) and SSH (port 22) access from anywhere, and allows all outbound traffic.
 - **EC2 Instance**: A `t2.micro` instance running Ubuntu, configured to use a key pair for SSH access. The instance is provisioned with a simple Python script and Flask.
 
+  
+
 ## Prerequisites
 
 Before you start, ensure you have:
@@ -42,10 +44,13 @@ The SSH key pair is used for secure access to the EC2 instance. You should have 
 ### VPC and Networking
 
 The VPC provides a private network for your resources. The subnet is a public subnet to which the EC2 instance is connected. The internet gateway allows your instance to access the internet.
+![image](https://github.com/user-attachments/assets/0822b4b5-5ffe-4270-8736-290b4a4fc3f4)
+
 
 ### Security Group
 
 The security group controls inbound and outbound traffic to the EC2 instance. It allows HTTP traffic on port 80 and SSH traffic on port 22. All outbound traffic is permitted.
+![image](https://github.com/user-attachments/assets/a7c9e859-1aa5-4d41-9314-c646fe190258)
 
 
 ### EC2 Instance
@@ -65,8 +70,6 @@ The EC2 instance is provisioned with Ubuntu and configured with a Python script.
     terraform init
     ```
 
-    ![Terraform Init Output](path/to/terraform-init-output-screenshot.png)
-
 2. **Apply the Configuration**
 
     Deploy the infrastructure by applying the Terraform configuration:
@@ -77,7 +80,6 @@ The EC2 instance is provisioned with Ubuntu and configured with a Python script.
 
     Confirm the action when prompted. Terraform will create the VPC, subnet, and EC2 instance.
 
-    ![Terraform Apply Output](path/to/terraform-apply-output-screenshot.png)
 
 ## Connecting to the EC2 Instance
 
@@ -89,7 +91,8 @@ The EC2 instance is provisioned with Ubuntu and configured with a Python script.
     aws ec2 describe-instances --instance-ids i-1234567890abcdef0 --query 'Reservations[*].Instances[*].[PublicIpAddress]' --output text
     ```
 
-    ![EC2 Instance Details](path/to/ec2-instance-details-screenshot.png)
+    ![image](https://github.com/user-attachments/assets/3dd964a5-1bec-496d-a95e-720e01865709)
+
 
 2. **SSH into the Instance**
 
@@ -101,21 +104,18 @@ The EC2 instance is provisioned with Ubuntu and configured with a Python script.
 
     Replace `public-ip-address` with the actual IP address.
 
-    ![SSH Connection](path/to/ssh-connection-screenshot.png)
-
 ## Screenshots
 
 1. **Terraform Init Output**
-    ![Terraform Init Output](path/to/terraform-init-output-screenshot.png)
+    <img width="638" alt="image" src="https://github.com/user-attachments/assets/71069edd-665e-444d-9a06-5c8f8759ee04">
 
 2. **Terraform Apply Output**
-    ![Terraform Apply Output](path/to/terraform-apply-output-screenshot.png)
+    <img width="666" alt="image" src="https://github.com/user-attachments/assets/bd99b33e-5c0d-4039-9b53-d86c5a6e1e9d">
+
 
 3. **EC2 Instance Details**
-    ![EC2 Instance Details](path/to/ec2-instance-details-screenshot.png)
+    <img width="833" alt="image" src="https://github.com/user-attachments/assets/0003de47-cc29-4ce3-8c81-3c23729f8bf4">
 
-4. **SSH Connection**
-    ![SSH Connection](path/to/ssh-connection-screenshot.png)
 
 ## Troubleshooting
 
