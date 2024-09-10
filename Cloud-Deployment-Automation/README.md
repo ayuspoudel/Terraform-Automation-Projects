@@ -1,4 +1,4 @@
-# AWS Infrastructure Setup with Terraform
+# Cloud Deployment Automation with Terraform
 
 This repository contains the Terraform configuration to deploy a basic AWS infrastructure. It sets up a VPC, subnet, internet gateway, route table, security group, and an EC2 instance. Additionally, it provisions the EC2 instance with a simple Python application.
 
