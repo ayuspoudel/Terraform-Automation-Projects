@@ -82,41 +82,21 @@ resource "aws_security_group" "sg-ecommerce" {
     name = "sg-ecommerce"
   }
 }
-
 resource "aws_s3_bucket" "Ayush-S3-Ecommerce-2024" {
   bucket = "ayush-s3-ecommerce-2024"
   tags = {
     name = "Ecommerce-S3"
   }
 }
-
-resource "aws_s3_bucket_policy" "s3_bucket_policy" {
-  bucket = aws_s3_bucket.Ayush-S3-Ecommerce-2024.id
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow",
-        Principal = "*",
-        Action = [
-          "s3:GetObject",
-          "s3:ListBucket"
-        ],
-        Resource = [
-          "arn:aws:s3:::ayush-s3-ecommerce-2024",
-          "arn:aws:s3:::ayush-s3-ecommerce-2024/*"
-        ]
-      }
-    ]
-  })
-}
-
 resource "aws_instance" "webserver1" {
   instance_type = "t2.micro"
   ami = "ami-0e86e20dae9224db8"
   vpc_security_group_ids = [aws_security_group.sg-ecommerce.id]
   subnet_id = aws_subnet.sub1.id
   user_data = base64encode(file("user_data1.sh"))
+  provisioner "local-exec" {
+    command = "ansible-playbook -i localhost, upload_to_s3.yml"
+  }
 }
 
 resource "aws_instance" "webserver2" {
