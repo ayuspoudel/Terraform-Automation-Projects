@@ -1,0 +1,14 @@
+---
+- name: Upload file to S3
+  hosts: localhost
+  tasks:
+    - name: Upload file to S3 bucket
+      community.aws.s3:
+        bucket: your-bucket-name
+        object: path/in/bucket/filename
+        src: /local/path/to/your/file
+        mode: put
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        region: us-west-2
+      delegate_to: localhost
