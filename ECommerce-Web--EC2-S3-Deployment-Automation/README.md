@@ -10,7 +10,7 @@ This project demonstrates the automation of deploying an E-Commerce website usin
 
 ## Architecture Diagram
 
-![Architecture Diagram](/architecture-diagram.png)
+![Architecture Diagram](/Screenshot 2024-09-22 at 10.59.04.png)
 
 
 ## VPC with Servers in Private Subnets and NAT
