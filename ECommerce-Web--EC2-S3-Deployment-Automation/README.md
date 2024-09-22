@@ -1,6 +1,4 @@
-Here's a detailed GitHub README file for your Terraform Automation project, including explanations and placeholders for images:
 
----
 
 # Terraform-Automation-Projects: E-Commerce Web EC2 & S3 Deployment Automation
 
@@ -10,7 +8,7 @@ This project demonstrates the automation of deploying an E-Commerce website usin
 
 ## Architecture Diagram
 
-![Architecture Diagram](/"Screenshot 2024-09-22 at 10.59.04".png)
+![Architecture Diagram](/arc.png)
 
 
 ## VPC with Servers in Private Subnets and NAT
